@@ -1,0 +1,11 @@
+README.md
+setup.py
+pygamer/Game.py
+pygamer/Menu.py
+pygamer/Object.py
+pygamer/Window.py
+pygamer/__init__.py
+pygamer.egg-info/PKG-INFO
+pygamer.egg-info/SOURCES.txt
+pygamer.egg-info/dependency_links.txt
+pygamer.egg-info/top_level.txt

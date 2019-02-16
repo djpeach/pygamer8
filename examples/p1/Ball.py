@@ -1,5 +1,5 @@
 import pygame
-from src import Object
+from pygamer import Object
 
 class Ball(Object):
     def __init__(self, speed, color, radius, center_position):

@@ -1,6 +1,6 @@
 # Pygamer Tutorial
 
-> Create an two player game with menus from start to finish. (Pong)
+> Create a two player game with menus from start to finish. (Pong)
 
 ## Table of Contents
 

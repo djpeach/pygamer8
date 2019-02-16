@@ -5,7 +5,7 @@ The pre-built structure and opinions of Pygamer make loading a game screen a sim
 ``` python
 import pygamer
 
-pygamer.Gamer().run()
+pygamer.Game().run()
 ```
 
 This imports Pygamer, creates an instance of the base `Game` class, and calls its `run()` method. This is the method responsible for running the Pygame loop and calling all other necessary methods to delegate functionality dynamically.
@@ -92,4 +92,4 @@ class Pong(Game):
 
 Here, we just check the bounds of the ball to the bounds of the window. If there is a crossover, we reset the ball's `rect` to the appropriate axis, and reverse the appropriate speed direction.
 
-This has been a basic intro to how easy it is to build get a game going with Pygamer, we continue this project in our part two, by adding a menu to our game, allowing the user to pause the game. Check it out [here](../p2)
+This has been a basic intro to how easy it is to build a game with Pygamer, we continue this project in our part two, by adding a menu to our game, allowing the user to pause the game. Check it out [here](../p2)

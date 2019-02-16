@@ -1,6 +1,6 @@
 import pygame
-from pygamer import Game
-from Ball import Ball
+from src import Game
+from examples.basic.Ball import Ball
 
 class Pong(Game):
     def __init__(self, ball_speed, paddle_speed, ball_radius, window_size=(800, 600)):

@@ -11,7 +11,7 @@ setuptools.setup(
     description="An opinionated way to build great games in Pygame",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="",
+    url="https://github.com/djpeach/pygamer/releases/tag/0.1.0",
     packages=setuptools.find_packages(),
     classifiers=[
         "Programming Language :: Python :: 3",

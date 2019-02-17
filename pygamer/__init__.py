@@ -1,6 +1,5 @@
-from .Button import Button
+import pygame
+
 from .Game import Game
 from .Object import Object
 from .Menu import Menu
-from .Player import Player
-# from .Window import Window // does this need to be publically available?

@@ -10,7 +10,9 @@ pygamer.Game().run()
 
 This imports Pygamer, creates an instance of the base `Game` class, and calls its `run()` method. This is the method responsible for running the Pygame loop and calling all other necessary methods to delegate functionality dynamically.
 
-This is super easy, but a blank screen isn't very exciting. Let's make our game a little more specific to our needs. We will build a simple Pong game for this example. As you can imagine, the Pong game should know much more about how the game works than the `Game` class does. So let's subclass `Game`, and start getting specific to our particular game. Start by creating a `Pong.py` file and adding the following code:
+This is super easy, but a blank screen isn't very exciting. Let's make our game a little more specific to our needs. We will build a simple Pong game for this example. As you can imagine, the Pong game should know much more about how the game works than the `Game` class does. So let's subclass `Game`, and start getting specific to our particular game. 
+
+Start by creating a `Pong.py` file and adding the following code:
 
 ```python
 import pygamer
@@ -35,6 +37,8 @@ Now you can run your game with `python main.py`, or, because we used `if __name_
 So here we have subclassed Game, but our game is still not very exciting. Lets start building some of the objects and logic needed for Pong to function. First let's use the parameters in our constructor to make the ball for our game. 
 
 However, before we can add a ball to Pong, we need to create the class for the Ball. Luckily, Pygamer also comes with an `Object` class that wraps much of the functionality we will need. Let's subclass that to create our Ball class.
+
+Create a `Ball.py` class file and add the following code:
 
 ```python
 import pygamer
@@ -62,7 +66,7 @@ class Pong(pygamer.Game):
   def __init__(self, ball_speed, paddle_speed, ball_radius, window_size=(800, 600)):
     ...
 
-    ball = Ball(ball_speed, (150, 25, 200), ball_radius, (self.w // 2, self.h // 2))
+    self.ball = Ball(ball_speed, (150, 25, 200), ball_radius, (self.w // 2, self.h // 2))
 ```
 
 Now our Pong game has a ball, but if we run the game again, we will still see the blank screen. There are two more steps we need to do to see the ball show on the screen. First, we need to add the ball to the `Game`'s `objects` array. 
@@ -71,7 +75,7 @@ Now our Pong game has a ball, but if we run the game again, we will still see th
 class Pong(pygamer.Game):
     def __init__(self, ball_speed, paddle_speed, ball_radius, window_size=(800, 600)):
         ...
-        self.objects.append(ball)
+        self.objects.append(self.ball)
 ```
 
 Second, we need to implement the `draw()` method for the Ball (`Object` sub-class).
@@ -79,6 +83,8 @@ Second, we need to implement the `draw()` method for the Ball (`Object` sub-clas
 > Each `Object`'s `draw()` method is declared, but not implemented, since this functionality is very specific to what the object is. It will need to be implemented on a per-subclass basis for each `Object`. We will do that in the Ball class now.
 
 ```python
+import pygame
+
 class Ball(pygamer.Object):
   ...
 
@@ -91,6 +97,8 @@ Now the Ball knows how to draw itself. (Draw it on the surface with it's color, 
 The next thing we might need to do is prevent the ball from going off of the screen. This is a perfect use for the `Game`'s `update` method.
 
 ```python
+import pygame
+
 class Pong(pygamer.Game):
   ...
 

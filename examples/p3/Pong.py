@@ -20,7 +20,7 @@ class Pong(pygamer.Game):
         self.add_menus()
         self.add_players()
         self.game_over_screen = GameOverMenu(self.window, self)
-        self.menus = [self.game_over_screen]
+        self.menus.append(self.game_over_screen)
 
     def update(self):
         if self.ball.scored:

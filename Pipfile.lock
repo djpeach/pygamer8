@@ -91,11 +91,11 @@
         },
         "pygamer": {
             "hashes": [
-                "sha256:8ba3c1919583982289c666e2ae9a940e179efbe8615727e987e25448b5890c32",
-                "sha256:fb6c6cac7dab31fc58ad3f26cff226be15f2c0ba1dc3a03cc0c9b2491aabc1ae"
+                "sha256:97f75eba195ca6ff622c39fcfc567ec02bbbeca3c95ff5847ffe40471fda3efc",
+                "sha256:b038e5a11525121e435693f7eea3bfd763d2cb05a78a0ebeff13caa6935d8d40"
             ],
             "index": "pypi",
-            "version": "==0.0.5"
+            "version": "==0.2.0"
         },
         "pygments": {
             "hashes": [

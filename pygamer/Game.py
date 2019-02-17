@@ -1,6 +1,8 @@
-import pygame
 import sys
 from collections import defaultdict
+
+import pygame
+
 from .Window import Window
 
 
@@ -25,21 +27,20 @@ class Game:
                 for handler in self.handlers[event.type]:
                     handler(event)
 
-
     def update(self):
         for menu in self.menus:
             while menu.active:
                 menu.take_over()
-        for object in self.objects:
-            object.update()
-        # for object in [player.objects for player in self.players]:
-        #     object.update()
+        for obj in self.objects:
+            obj.update()
+        for player in self.players:
+            player.update()
 
     def draw(self):
-        for object in self.objects:
-            object.draw(self.window.surface)
-        # for object in [player.objects for player in self.players]:
-        #     object.draw(self.window.surface)
+        for obj in self.objects:
+            obj.draw(self.window.surface)
+        for player in self.players:
+            player.draw(self.window.surface)
 
     def run(self):
         while not self.game_over:

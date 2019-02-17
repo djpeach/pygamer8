@@ -1,5 +1,6 @@
 import pygame
 
+
 class Window:
     def __init__(self, size):
         self.surface = pygame.display.set_mode(size)

@@ -1,6 +1,8 @@
-import pygame
 import sys
 from collections import defaultdict
+
+import pygame
+
 
 class Menu:
     def __init__(self, screen, fps=15):
@@ -20,14 +22,13 @@ class Menu:
                 for handler in self.handlers[event.type]:
                     handler(event)
 
+    def update(self):
+        for obj in self.objects:
+            obj.update()
 
-    def update_all(self):
-        for object in self.objects:
-            object.update()
-
-    def draw_all(self):
-        for object in self.objects:
-            object.draw(self.screen.surface)
+    def draw(self):
+        for obj in self.objects:
+            obj.draw(self.screen.surface)
 
     def activate(self):
         self.active = True
@@ -38,8 +39,8 @@ class Menu:
     def take_over(self):
         self.screen.surface.fill((180, 180, 180))
         self.handle_events()
-        self.update_all()
-        self.draw_all()
+        self.update()
+        self.draw()
 
         pygame.display.update()
         self.clock.tick(self.fps)

@@ -1,5 +1,3 @@
-import pygame
-
 class Object:
     def __init__(self, rect, speed=(0, 0)):
         self.rect = rect

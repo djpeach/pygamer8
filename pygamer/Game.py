@@ -3,6 +3,7 @@ import sys
 from collections import defaultdict
 from .Window import Window
 
+
 class Game:
     def __init__(self, fps=60, window_size=(0, 0), bg_color=(180, 180, 180)):
         self.game_over = False
@@ -26,9 +27,9 @@ class Game:
 
 
     def update(self):
-        # for menu in self.menus:
-        #     while menu.active:
-        #         menu.run()
+        for menu in self.menus:
+            while menu.active:
+                menu.take_over()
         for object in self.objects:
             object.update()
         # for object in [player.objects for player in self.players]:

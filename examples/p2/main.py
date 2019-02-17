@@ -1,3 +1,4 @@
 from Pong import Pong
 
-Pong((-2, 5), 7, 20, window_size=(400, 400)).run()
+if __name__ == "__main__":
+    Pong((5, 5), 7, 20).run()
